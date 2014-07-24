@@ -6,6 +6,14 @@ open System.Text
 open Xamarin.Forms
 open System.Threading.Tasks
 
+module AsyncExtentions =
+    type Async with 
+        static member AwaitTaskVoid : (Task -> Async<unit>) =
+                        Async.AwaitIAsyncResult >> Async.Ignore
+open AsyncExtentions
+    
+
+
 type SubPage() as this =
     inherit ContentPage()
     do 
@@ -65,8 +73,13 @@ type App() =
                 /// async {} の場合、戻り値を持たない Task が使えないのでこうやるらしい。
                 /// Page.Navigation.PushAsync が戻り値を持たないのでややこしいだけ。
                 let AwaitTaskVoid : (Task -> Async<unit>) =
-                    Async.AwaitIAsyncResult >> Async.Ignore
+                     Async.AwaitIAsyncResult >> Async.Ignore
                 page.Navigation.PushAsync(new SubPage()) |> AwaitTaskVoid |> ignore
+
+                // 4. これは動かない。不思議だ。
+                // async {
+                //     do! page.Navigation.PushAsync(new SubPage()) |> Async.AwaitTaskVoid 
+                // } |> ignore
 
             )
         new NavigationPage(page)
