@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="TaskDelay.Win.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TaskDelay.Win"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel >
+            <TextBlock Text="Task.Delay Test" FontSize="30"/>
+            <TextBlock x:Name="textTime"  Text="00min 00sec" FontSize="30"/>
+            <Button x:Name="buttonStart" Content="Start"/>
+            <Button x:Name="buttonStop" Content="Stop"/>
+            <Button x:Name="buttonReset" Content="Reset"/>
+        </StackPanel>
+    </Grid>
+</Page>

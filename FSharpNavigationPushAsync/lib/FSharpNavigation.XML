@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharpNavigation</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpNavigationPushAsync.App">
+<summary>
+ C#のAppクラスをそのまま直したもの
+ 1.ビルド時に --standalone をつけないと、Windows Phone プロジェクトで FSharp.Core のエラーが出る。
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+</members>
+</doc>
